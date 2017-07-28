@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "library(shiny)\nlibrary(leaflet)\n\ngeocodeAdddress <- function(address) {\n  require(RJSONIO)\n  url <- \"http://maps.google.com/maps/api/geocode/json?address=\"\n  url <- URLencode(paste(url, address, \"&sensor=false\", sep = \"\"))\n  url\n  x <- fromJSON(url, simplify = FALSE)\n  if (x$status == \"OK\") {\n    out <- c(x$results[[1]]$geometry$location$lng,\n             x$results[[1]]$geometry$location$lat)\n  } else {\n    out <- NA\n  }\n  return(out)\n}\n\nshinyServer(function(input, output) {\n    # get the value of starting point \n    output$from <- renderText({ \n      paste(\"You have selected\", geocodeAdddress(input$from)[1], geocodeAdddress(input$from)[2])\n    })\n\n    \n    #get the value of the destination point\n    output$to <- renderText({ \n      paste(\"You have selected\", geocodeAdddress(input$to)[1], geocodeAdddress(input$to)[2])\n    })\n    \n    output$mymap <- renderLeaflet({\n        leaflet() %>%\n        addTiles() %>%  # Add default OpenStreetMap map tiles\n        addMarkers(lng=geocodeAdddress(input$from)[1], lat=geocodeAdddress(input$from)[2], popup=\"your starting point\") %>%\n        addMarkers(lng=geocodeAdddress(input$to)[1], lat=geocodeAdddress(input$to)[2], popup=\"destination\")\n    })\n\n})\n",
+    "created" : 1496841328140.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2570210828",
+    "id" : "910498FE",
+    "lastKnownWriteTime" : 1496865124,
+    "last_content_update" : -2147483648,
+    "path" : "~/TP_4_Geolocalisation/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "library(devtools)\ninstall_github(\"ramnathv/rCharts@dev\")\ninstall_github(\"ramnathv/rMaps\")\n\n\n# library(shiny)\n# library(leaflet)\n# \n# r_colors <- rgb(t(col2rgb(colors()) / 255))\n# names(r_colors) <- colors()\n# \n# ui <- fluidPage(\n#   leafletOutput(\"mymap\"),\n#   p(),\n#   actionButton(\"recalc\", \"New points\")\n# )\n# \n# server <- function(input, output, session) {\n#   \n#   points <- eventReactive(input$recalc, {\n#     cbind(rnorm(40) * 2 + 13, rnorm(40) + 48)\n#   }, ignoreNULL = FALSE)\n#   \n#   output$mymap <- renderLeaflet({\n#     leaflet() %>%\n#       addProviderTiles(providers$Stamen.TonerLite,\n#                        options = providerTileOptions(noWrap = TRUE)\n#       ) %>%\n#       addMarkers(data = points())\n#   })\n# }\n# \n# shinyApp(ui, server)\n\n\n\n\n\n\n\n\n\n\n\n\n# geocodeAdddress <- function(address) {\n#   require(RJSONIO)\n#   url <- \"http://maps.google.com/maps/api/geocode/json?address=\"\n#   url <- URLencode(paste(url, address, \"&sensor=false\", sep = \"\"))\n#   x <- fromJSON(url, simplify = FALSE)\n#   if (x$status == \"OK\") {\n#     out <- c(x$results[[1]]$geometry$location$lng,\n#              x$results[[1]]$geometry$location$lat)\n#   } else {\n#     out <- NA\n#   }\n#   out\n# }\n# \n# geocodeAdddress(\"casablanca\")\n",
+    "created" : 1496841400665.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1356333844",
+    "id" : "CF371F10",
+    "lastKnownWriteTime" : 1496873449,
+    "last_content_update" : -2147483648,
+    "path" : "~/leaflet.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

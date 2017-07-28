@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n# This is the user-interface definition of a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n\nlibrary(shiny)\nlibrary(leaflet)\n\nshinyUI(fluidPage(\n\n  # Application title\n  titlePanel(\"TP Geolocalisation\"),\n\n  # Sidebar with a slider input for number of bins\n  sidebarLayout(\n    sidebarPanel(\n      textInput('from', 'Choose starting point', \" \",placeholder = \"example : Casablanca\"),\n      textInput('to', 'Choose destination', \" \",placeholder = \"example : laayoune\"),\n      submitButton(text = \"Submit\", icon = NULL, width = NULL)\n    ),\n\n    # Show a plot of the generated distribution\n    mainPanel(\n      textOutput(\"from\"),\n      textOutput(\"to\"),\n      textOutput(\"cords\"),\n      leafletOutput(\"mymap\")\n    )\n  )\n))\n",
+    "created" : 1496841327812.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4122481864",
+    "id" : "144AA0C9",
+    "lastKnownWriteTime" : 1496874608,
+    "last_content_update" : -2147483648,
+    "path" : "~/TP_4_Geolocalisation/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
